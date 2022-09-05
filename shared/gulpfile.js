@@ -82,11 +82,11 @@ function reloadBuildSystem() {
 function watchFiles(cb) {
     server();
     watch(['./package-lock.json', './package.json'], eolc);
-    watch(['./js/*.js', '!node_modules/**'], series(reload, lint));
+    watch(['../shared/js/**/*.js', './js/**/*.js', '!node_modules/**'], series(reload, lint));
     watch(['./css/*.scss', './scss/*.scss', '!node_modules/**'], series(compileSass, reload));
     watch(['./css/*.css', '!node_modules/**'], reload);
     watch(['./*.html', '!node_modules/**'], reload);
-    watch(['./**/*.js', '!js/**', '!./**/js/*.js'], reloadBuildSystem);
+    watch(['../shared/**/*.js', '!../shared/js/**'], reloadBuildSystem);
     cb();
 }
 

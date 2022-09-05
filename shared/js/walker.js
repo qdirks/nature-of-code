@@ -54,4 +54,19 @@ class Walker {
         this.y += ry * this.w;
         this.stepCount += 1;
     }
+    step4() { // ex-i.1 walker that tends to move down and to the right
+        let rx = Math.random() * 2 - 1;
+        let ry = Math.random() * 2 - 1;
+        if (Math.random() >= 0.9) { // move down and to the right
+            rx = Math.random();
+            ry = Math.random();
+        }
+        if (this.x + rx >= cv.width) rx = -1;
+        if (this.x + rx <= 0 - this.w) rx = 1;
+        if (this.y + ry >= cv.height) ry = -1;
+        if (this.y + ry <= 0 - this.w) ry = 1;
+        this.x += rx * this.w;
+        this.y += ry * this.w;
+        this.stepCount += 1;
+    }
 }

@@ -16,7 +16,7 @@ function server() {
     let bs = browserSync.init({
         ghostMode: false, // clicks, scrolls & form input on any device mirrored to all others
         server: {
-            baseDir: "./",
+            baseDir: process.cwd(),
             index: "index.html"
         }
     });

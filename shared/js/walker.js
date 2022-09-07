@@ -1,6 +1,4 @@
 // jshint esversion: 6
-
-
 class Walker {
     constructor(x=0, y=0, width=1) {
         this.x = x;
@@ -91,6 +89,25 @@ class Walker {
         if (this.y + ry <= 0 - this.w) ry = 1;
         this.x += rx * this.w;
         this.y += ry * this.w;
+        this.stepCount += 1;
+    }
+    step6() { // Gaussian random walker: exc-i.5
+        // choose a step size
+        let stepSizeX = nextG() * 0.1 * this.w + this.w;
+        let stepSizeY = nextG() * 0.1 * this.w + this.w;
+
+        // pick a direction
+        let xdir = Math.floor(Math.random() * 3) - 1;
+        let ydir = Math.floor(Math.random() * 3) - 1;
+
+        let newX = stepSizeX * xdir;
+        let newY = stepSizeY * ydir;
+
+        if (this.x + newX >= cv.width || this.x + newX + this.w <= 0) newX = -newX;
+        if (this.y + newY >= cv.height || this.y + newY + this.w <= 0) newY = -newY;
+
+        this.x += newX;
+        this.y += newY;
         this.stepCount += 1;
     }
 }

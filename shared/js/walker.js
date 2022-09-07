@@ -91,10 +91,12 @@ class Walker {
         this.y += ry * this.w;
         this.stepCount += 1;
     }
-    step6() { // Gaussian random walker: exc-i.5
+    step6() { // exc-i.5 Gaussian random walker
         // choose a step size
-        let stepSizeX = nextG() * 0.1 * this.w + this.w;
-        let stepSizeY = nextG() * 0.1 * this.w + this.w;
+        let sd = 0.5 * this.w; // standard deviation
+        let mean = this.w; // average step size
+        let stepSizeX = nextG() * sd + mean;
+        let stepSizeY = nextG() * sd + mean;
 
         // pick a direction
         let xdir = Math.floor(Math.random() * 3) - 1;

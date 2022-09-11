@@ -22,3 +22,4 @@ function drawLoop() {
     if (window.draw) window.draw();
     if (!window.noLoop) requestAnimationFrame(drawLoop);
 }
+global.drawLoop = drawLoop;

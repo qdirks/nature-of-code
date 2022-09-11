@@ -29,8 +29,6 @@ function bundle(cb) {
     .pipe(createVinylFile('bundle.js')).pipe(gulp.dest('./js/dist/'));
 }
 function startServer(cb) {
-    // cb(); // dummy - erase when done
-    // return; // dummy - erase when done
     callback = cb;
 
     var bsInstInitObj = bsInst.init({

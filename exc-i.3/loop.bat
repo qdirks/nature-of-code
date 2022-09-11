@@ -1,1 +1,1 @@
-../shared/loopGulp.bat
+../shared/loop.bat

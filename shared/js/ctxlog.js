@@ -6,13 +6,12 @@
  * @param {number} y
  * @param {number} padding
  */
- function ctxLog(text='', x=0, y=0, padding=5) {
+function ctxLog(text='', x=0, y=0, padding=1) {
     // protections
     ctx.save();
     ctx.beginPath();
 
     // font setup
-    ctx.font = "20px monospace";
     ctx.textBaseline = 'top';
     ctx.textAlign = 'left';
     let metrics = ctx.measureText(text);

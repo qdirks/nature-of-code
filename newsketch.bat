@@ -21,6 +21,8 @@ if -%__new_directory__%-==-- (
     echo Error: A sketch name was not specified.
     exit /b 1
 )
+
+@REM Copy the template files and cd into the new directory
 xcopy /s /b /i template %__new_directory__%
 cd %__new_directory__%
 
@@ -30,4 +32,4 @@ echo.>> index.html
 echo     ^<title^>%__new_directory__%^</title^>>> index.html
 type ..\shared\index2.html >> index.html
 
-gulp
+call loop.bat

@@ -1,4 +1,4 @@
 @echo off
-@rem Get prompt at batch file location. Useful for quickly getting an administrator prompt at this directory location by running as administrator.
+@rem Get prompt at batch file location
 cd /d %~dp0
 cmd /k

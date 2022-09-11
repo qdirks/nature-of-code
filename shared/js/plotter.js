@@ -62,4 +62,4 @@ Graph.prototype.draw = function(x, y) {
 
     ctx.restore();
 };
-global.Graph = Graph;
+globalThis.Graph = Graph;

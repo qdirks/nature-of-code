@@ -1,6 +1,5 @@
 // jshint esversion: 6
 
-
 let frameSampleCount = 0;
 let frameSampleStartTime = 0;
 let frameSampleEndTime = 0;
@@ -22,4 +21,4 @@ function drawLoop() {
     if (window.draw) window.draw();
     if (!window.noLoop) requestAnimationFrame(drawLoop);
 }
-global.drawLoop = drawLoop;
+globalThis.drawLoop = drawLoop;

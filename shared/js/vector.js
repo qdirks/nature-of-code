@@ -48,4 +48,4 @@ class Vector {
         this.revz();
     }
 }
-global.Vector = Vector;
+globalThis.Vector = Vector;
